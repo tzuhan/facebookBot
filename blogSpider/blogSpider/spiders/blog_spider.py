@@ -9,5 +9,5 @@ class BlogSpider(scrapy.Spider):
 
     def parse(self, response):
         yield {
-            'url': response.css('.parker-featured-img a::attr(href)').get(),
+            'url': response.css('.parker-featured-img>a>img::attr(src)').get(),
         }
